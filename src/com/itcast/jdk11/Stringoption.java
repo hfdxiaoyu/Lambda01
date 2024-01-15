@@ -18,9 +18,23 @@ public class Stringoption {
         //新增字符串处理方法
         //判断字符串是否为空
         //isBlank 跟 isEmpty 的区别  \n \t 这些会被判空白
+        //strip与trim的区别时trim不能去除非英文的空格，strip可以去除所有字符集的空格
         System.out.printf("字符串是否为空：%b \n","\t".isBlank());
         System.out.printf("字符串 str 是否为空：%b \n",str.isBlank());
+        var content = "  \t \nb \na content ";
+        System.out.println("去除手尾空格："+content.strip());
+        System.out.println("去除首部空格："+content.stripLeading());
+        System.out.println("去除尾部空格："+content.stripTrailing());
+        System.out.println("复制字符串"+content.repeat(3));
+        System.out.println("行数统计："+content.lines().count());
 
+        //文本块
+        String query = """
+           SELECT * from USER \
+           WHERE `id` = 1 \
+           ORDER BY `id`, `name`;\
+           """;
+        System.out.println(query);
     }
 
 }
